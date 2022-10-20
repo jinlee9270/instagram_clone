@@ -11,21 +11,23 @@ const Login = () => {
     const [userName, setUserName] = useState('')
 
     return (
-        <div>
-            <div>
+        <div style={{position:'absolute', top: '50%', left:'50%', transform: 'translate(-50%, -50%)'}}>
+            <div style={{display:'flex', alignItems:'center', flexDirection: 'column'}}>
             <img src="../../public/img/instagram.png"/>
             {isLogin && <>
+                <div style={{display:'flex', alignItems:'center', flexDirection: 'column'}}>
                 <input placeholder="전화번호, 사용자 이름 또는 이메일"></input>
                 <input placeholder="비밀번호" type="password"></input>   
                 <button>로그인</button>
-                <div style={{display:'flex', justifyContent:'center'}}><hr/><div>또는</div><hr/></div>
+                </div>
+                <div style={{display:'flex'}}><hr/><div>또는</div><hr/></div>
                 <div><button>페이스북으로 로그인</button></div>
                 <a>비밀번호를 잊으셨나요?</a>
             </>}
             {!isLogin && <>
                 <div>친구들의 사진과 동영상을 보려면 가입하세요.</div>
                 <button>페이스북으로 로그인</button>
-                <div style={{display:'flex', justifyContent:'center'}}><hr/><div>또는</div><hr/></div>
+                <div style={{display:'flex'}}><hr/><div>또는</div><hr/></div>
                 <input placeholder="휴대폰 번호 또는 이메일 주소"></input>
                 <input placeholder="성명"></input>
                 <input placeholder="사용자 이름"></input>
@@ -36,7 +38,7 @@ const Login = () => {
                 
             </>}
             </div>
-            <div>
+            <div style={{display:'flex', alignItems:'center', flexDirection: 'column'}}>
                 {isLogin && <div>계정이 없으신가요? <span onClick={(e) => {setIsLogin(false)}}>가입하기</span></div>}
                 {!isLogin &&<div>계정이 있으신가요? <span onClick={(e) => {setIsLogin(true)}}>로그인</span></div>}
             </div>
