@@ -13,7 +13,7 @@ const Login = () => {
     return (
         <div style={{position:'absolute', top: '50%', left:'50%', transform: 'translate(-50%, -50%)'}}>
             <div style={{display:'flex', alignItems:'center', flexDirection: 'column'}}>
-            <img src="../../public/img/instagram.png"/>
+            <img src="../img/instagram.png"/>
             {isLogin && <>
                 <div style={{display:'flex', alignItems:'center', flexDirection: 'column'}}>
                 <input placeholder="전화번호, 사용자 이름 또는 이메일"></input>

@@ -1,10 +1,11 @@
 import React from "react"
+import GNB from "../components/GNB"
 
 const Main = () => {
 
     return (
         <>
-        여기가 메인
+            <GNB/>
         </>
     )
 }
