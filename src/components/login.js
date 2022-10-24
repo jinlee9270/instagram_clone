@@ -62,25 +62,27 @@ const Login = () => {
                 <StyledInput placeholder="비밀번호" type="password"></StyledInput>   
                 <StyledButton>로그인</StyledButton>
                 </ColFlexBox>
-                <FlexBox><hr/><div>또는</div><hr/></FlexBox>
+                <FlexBox style={{margin:'10px 0px'}}><div/><div>또는</div><div/></FlexBox>
                 <FlexBox style={{padding:'10px'}}>
                     <img src="../img/facebook.png" style={{width:'14px', paddingRight:'5px'}}/><span style={{color:'#385185', fontSize:"14px", fontWeight:'bolder', cursor: 'pointer'}}>Facebook으로 로그인</span>
                 </FlexBox>
                 <a style={{color:'#385185', fontSize:'13px', padding:'10px 0px 20px 0px'}}>비밀번호를 잊으셨나요?</a>
             </>}
             {!isLogin && <>
-                <div style={{color:'#999999', fontWeight:'bold', fontSize:'17px', width:'272px', textAlign:'center'}}>친구들의 사진과 동영상을 보려면 가입하세요.</div>
-                <StyledButton>페이스북으로 로그인</StyledButton>
-                <FlexBox><hr/><div>또는</div><hr/></FlexBox>
+                <div style={{color:'#AAAAAA', fontWeight:'bold', fontSize:'17px', width:'272px', textAlign:'center'}}>친구들의 사진과 동영상을 보려면 가입하세요.</div>
+                <StyledButton style={{padding:'10px'}}>
+                    <img src="../img/facebook.png" style={{color :'white', width:'14px', paddingRight:'5px'}}/><span style={{color:'white', fontSize:"14px", fontWeight:'bolder', cursor: 'pointer'}}>Facebook으로 로그인</span>
+                </StyledButton>
+                <FlexBox style={{margin:'10px 0px'}}><div/><div>또는</div><div/></FlexBox>
                 <StyledInput placeholder="휴대폰 번호 또는 이메일 주소"></StyledInput>
                 <StyledInput placeholder="성명"></StyledInput>
                 <StyledInput placeholder="사용자 이름"></StyledInput>
                 <StyledInput placeholder="비밀번호" type="password"></StyledInput>
-                <div style={{fontSize:'0.8rem', fontWeight:'lighter'}}>  
+                <div style={{fontSize:'0.8rem', fontWeight:'bolder', margin:'10px 0px', color:'#AAAAAA'}}>  
                     <div>저희 서비스를 이용하는 사람이 회원님의 연락처 정보를</div>
                     <div>Instagram에 업로드했을 수도 있습니다.<span style={{fontWeight:'bolder'}}> 더 알아보기</span></div>
                 </div>
-                <StyledButton>가입</StyledButton>
+                <StyledButton style={{margin:'10px 0px 40px 0px'}}>가입</StyledButton>
                 
             </>}
             </ColFlexBoxBorder>
