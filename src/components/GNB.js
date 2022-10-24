@@ -28,7 +28,7 @@ const NaviBarImg = styled.img`
 `
 
 const SearchWrap = styled.div`
-    display:flex;
+    display: flex;
     background-color: #DDDDDD;
     border-radius: 5px;
 `
@@ -44,6 +44,11 @@ const SearchInput = styled.input`
 `
 
 const GNB = () => {
+    const Logout = () => {
+        localStorage.removeItem('LoginToken')
+        console.log("Logout")
+    }
+
     return (
         <NaviWrap>
             <ul style={{display:'flex'}}>
@@ -69,7 +74,7 @@ const GNB = () => {
                         <NaviBarImg src='../img/add-document.png' />
                         <NaviBarImg src='../img/compass.png' />
                         <NaviBarImg src='../img/heart.png' />
-                        <NaviBarImg src='../img/profile-user.png' />
+                        <NaviBarImg src='../img/profile-user.png' onClick={Logout}/>
                     </div>
                 </StyledLi>
             </ul>
