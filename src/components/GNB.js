@@ -3,10 +3,11 @@ import styled from "styled-components"
 
 const NaviWrap = styled.nav`
     display: flex;
-    margin: 20px;
+    margin: 10px 0px;
     justify-content: space-evenly;
     position: sticky;
     top: 0;
+    background-color: white;
 `
 const StyledLi = styled.li`
     list-style-type: none;
