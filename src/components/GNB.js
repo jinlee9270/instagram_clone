@@ -4,6 +4,9 @@ import styled from "styled-components"
 const NaviWrap = styled.nav`
     display: flex;
     margin: 20px;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
 `
 const StyledLi = styled.li`
     list-style-type: none;
@@ -12,6 +15,10 @@ const StyledLi = styled.li`
 
 const LogoImg = styled.img`
     height: 40px;
+`
+
+const Flexbox = styled.div`
+    width: 100px
 `
 
 const NaviBarImg = styled.img`
@@ -38,9 +45,12 @@ const SearchInput = styled.input`
 const GNB = () => {
     return (
         <NaviWrap>
-            <ul>
+            <ul style={{display:'flex'}}>
                 <StyledLi>
                     <LogoImg src="../img/instagram.png" />
+                </StyledLi>
+                <StyledLi>
+                    <Flexbox/>
                 </StyledLi>
                 <StyledLi>
                     <SearchWrap>
@@ -49,7 +59,10 @@ const GNB = () => {
                     </SearchWrap>
                 </StyledLi>
                 <StyledLi>
-                    <div>
+                    <Flexbox/>
+                </StyledLi>
+                <StyledLi>
+                    <div style={{display:'flex'}}>
                         <NaviBarImg src='../img/home.png' />
                         <NaviBarImg src='../img/paper_plane.png' />
                         <NaviBarImg src='../img/add-document.png' />
