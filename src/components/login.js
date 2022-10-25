@@ -47,6 +47,8 @@ const Login = () => {
     const [isLogin, setIsLogin] = useState(true)
     const [isEmail, setIsEmail] = useState(false)
     const [isPassword, setIsPassword] = useState(false)
+    const [isName, setIsName] = useState(false)
+    const [isUserName, setIsUserName] = useState(false)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -57,7 +59,6 @@ const Login = () => {
         const at = /@/
         const period = /\./ 
         const curemail = e.target.value
-        console.log(curemail)
         if(at.test(curemail) && period.test(curemail)){
             setIsEmail(true)
         }
@@ -78,6 +79,31 @@ const Login = () => {
         setPassword(curpassword)
     }
 
+    const onChangeName = (e) => {
+        const regex = /./
+        const curName = e.target.value
+        if(regex.test(curName)){
+            setIsName(true)
+        }
+        else {
+            setIsName(false)
+        }
+        setName(curName)
+        console.log(regex.test(curName))
+    }
+
+    const onChangeUserName = (e) => {
+        const regex = /./
+        const curUserName = e.target.value
+        if(regex.test(curUserName)){
+            setIsUserName(true)
+        }
+        else {
+            setIsUserName(false)
+        }
+        setUserName(curUserName)
+    }
+
     return (
         <LoginWrap>
             <ColFlexBoxBorder>
@@ -86,7 +112,6 @@ const Login = () => {
                 <ColFlexBox>
                 <StyledInput placeholder="전화번호, 사용자 이름 또는 이메일" onChange={onchangeEmail} outline={isEmail}/>
                 <StyledInput placeholder="비밀번호" type="password" onChange={onChangePassword} outline={isPassword}/> 
-                {console.log(isEmail, isPassword, password, password.length)} 
                 <StyledButton>로그인</StyledButton>
                 </ColFlexBox>
                 <FlexBox style={{margin:'10px 0px'}}><div/><div>또는</div><div/></FlexBox>
@@ -101,10 +126,10 @@ const Login = () => {
                     <img src="../img/facebook.png" style={{color :'white', width:'14px', paddingRight:'5px'}}/><span style={{color:'white', fontSize:"14px", fontWeight:'bolder', cursor: 'pointer'}}>Facebook으로 로그인</span>
                 </StyledButton>
                 <FlexBox style={{margin:'10px 0px'}}><div/><div>또는</div><div/></FlexBox>
-                <StyledInput placeholder="휴대폰 번호 또는 이메일 주소"></StyledInput>
-                <StyledInput placeholder="성명"></StyledInput>
-                <StyledInput placeholder="사용자 이름"></StyledInput>
-                <StyledInput placeholder="비밀번호" type="password"></StyledInput>
+                <StyledInput placeholder="휴대폰 번호 또는 이메일 주소" onChange={onchangeEmail} outline={isEmail}></StyledInput>
+                <StyledInput placeholder="성명" onChange={onChangeName} outline={isName}></StyledInput>
+                <StyledInput placeholder="사용자 이름" onChange={onChangeUserName} outline={isUserName}></StyledInput>
+                <StyledInput placeholder="비밀번호" type="password" onChange={onChangePassword} outline={isPassword}></StyledInput>
                 <div style={{fontSize:'0.8rem', fontWeight:'bolder', margin:'10px 0px', color:'#AAAAAA'}}>  
                     <div>저희 서비스를 이용하는 사람이 회원님의 연락처 정보를</div>
                     <div>Instagram에 업로드했을 수도 있습니다.<span style={{fontWeight:'bolder'}}> 더 알아보기</span></div>
