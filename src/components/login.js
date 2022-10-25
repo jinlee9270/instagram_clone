@@ -28,6 +28,7 @@ const StyledInput = styled.input`
     margin: 5px 40px;
     width: 250px;
     border: solid 1px #DDDDDD;
+    outline: solid 1px ${props=>(props.outline? 'blue' : 'red')};
 `
 
 const StyledButton = styled.button`
@@ -52,14 +53,40 @@ const Login = () => {
     const [name, setName] = useState('')
     const [userName, setUserName] = useState('')
 
+    const onchangeEmail = (e) => {
+        const at = /@/
+        const period = /\./ 
+        const curemail = e.target.value
+        console.log(curemail)
+        if(at.test(curemail) && period.test(curemail)){
+            setIsEmail(true)
+        }
+        else{
+            setIsEmail(false)
+        }
+        setEmail(curemail)
+    }
+
+    const onChangePassword = (e) => {
+        const curpassword = e.target.value
+        if(curpassword.length >= 8){
+            setIsPassword(true)
+        }
+        else{
+            setIsPassword(false)
+        }
+        setPassword(curpassword)
+    }
+
     return (
         <LoginWrap>
             <ColFlexBoxBorder>
             <img src="../img/instagram.png" style={{padding:'40px'}}/>
             {isLogin && <>
                 <ColFlexBox>
-                <StyledInput placeholder="전화번호, 사용자 이름 또는 이메일"></StyledInput>
-                <StyledInput placeholder="비밀번호" type="password"></StyledInput>   
+                <StyledInput placeholder="전화번호, 사용자 이름 또는 이메일" onChange={onchangeEmail} outline={isEmail}/>
+                <StyledInput placeholder="비밀번호" type="password" onChange={onChangePassword} outline={isPassword}/> 
+                {console.log(isEmail, isPassword, password, password.length)} 
                 <StyledButton>로그인</StyledButton>
                 </ColFlexBox>
                 <FlexBox style={{margin:'10px 0px'}}><div/><div>또는</div><div/></FlexBox>
