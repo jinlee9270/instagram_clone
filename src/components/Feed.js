@@ -10,7 +10,7 @@ const FeedWrap = styled.div`
     transform: translate(-50%, 0%)
 `
 const FeedEmoticon = styled.img`
-    width: 20px;
+    width: 25px;
     margin : 5px;
 `
 
@@ -25,7 +25,7 @@ const Feed = () => {
                         <FeedEmoticon src="../img/profile-user.png"/>
                         <div>유저아이디</div>
                     </div>
-                    <button>...</button>
+                    <button style={{border:'none', background:'none', fontWeight:'bold', fontSize: '18px'}}>...</button>
                 </div>
                 <div>
                     <img src="../img/sample.png" style={{width:'450px', height:'450px'}}/>
@@ -40,14 +40,14 @@ const Feed = () => {
                         <FeedEmoticon src="../img/bookmark-white.png" />
                     </div>
                 </div>
-                <div>좋아요 <span>0개</span></div>
+                <div style={{margin: '30px 0px'}}>좋아요 <span>0개</span></div>
                 <div style={{display:'flex'}}>
-                    <div>유저아이디</div><div style={{margin:'0px 5px'}}>댓글댓글</div>
+                    <div style={{fontWeight:'bold'}}>유저아이디</div><div style={{margin:'0px 5px'}}>댓글댓글</div>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center'}}>
-                    <img src="../img/free-icon-happy.png" style={{width:'20px', marginRight:'20px'}}/>
-                    <input placeholder="댓글달기..." style={{width:'350px', fontSize:'1rem', }}/>
-                    <button>게시</button>
+                <div style={{display: 'flex', margin: '30px 0px', justifyContent: 'space-between'}}>
+                    <img src="../img/free-icon-happy.png" style={{width:'20px', height:'20px'}}/>
+                    <input placeholder="댓글달기..." style={{width:'350px', fontSize:'1rem', border:'none' }}/>
+                    <button style={{border:'none', background:'none', color: '#0095f6'}}>게시</button>
                 </div>
             </FeedWrap>
         </>
