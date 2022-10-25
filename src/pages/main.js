@@ -1,13 +1,14 @@
 import React from "react"
 import GNB from "../components/GNB"
+import Feed from '../components/Feed'
 
 const Main = () => {
 
     return (
         <>
             <GNB/>
-            <div style={{height:'1500px', backgroundColor:'red'}}>
-            </div>
+            <hr/>
+            <Feed/>
         </>
     )
 }
