@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import Modal from 'react-modal'
 
 const FeedWrap = styled.div`
     display: flex;
@@ -13,19 +14,40 @@ const FeedEmoticon = styled.img`
     width: 25px;
     margin : 5px;
 `
+const customStyles = {
+    content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    },
+};
 
 const Feed = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     
-    
+    const ModalContainer = () => {
+        if(isModalOpen){
+            setIsModalOpen(false)
+        }
+        else{
+            setIsModalOpen(true)
+        }
+    }
+
     return (
         <>
             <FeedWrap>
-                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
                     <div style={{display: 'flex', alignItems: 'center', margin:'10px 0px'}}>
                         <FeedEmoticon src="../img/profile-user.png"/>
                         <div>유저아이디</div>
                     </div>
-                    <button style={{border:'none', background:'none', fontWeight:'bold', fontSize: '18px'}}>...</button>
+                    <button style={{background:'none', border:'none', fontWeight:'bold', fontSize: '18px', cursor:'pointer'}} onClick={ModalContainer}>...</button>
+                    {console.log(isModalOpen)}
+                    {isModalOpen && <Modal style={customStyles}/>}
                 </div>
                 <div>
                     <img src="../img/sample.png" style={{width:'450px', height:'450px'}}/>
